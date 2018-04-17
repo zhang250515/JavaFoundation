@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 import orm.*;
 
 import java.util.*;
@@ -84,5 +86,6 @@ public class JpaTest extends BaseSpringTest{
     public void testUserQuery(){
         userRepository.findAll().forEach(System.out::println);
     }
+
 
 }

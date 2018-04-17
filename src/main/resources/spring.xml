@@ -4,23 +4,27 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="
       http://www.springframework.org/schema/beans
 	  http://www.springframework.org/schema/beans/spring-beans.xsd
       http://www.springframework.org/schema/data/jpa
       http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
       http://www.springframework.org/schema/context
-      http://www.springframework.org/schema/context/spring-context.xsd">
+      http://www.springframework.org/schema/context/spring-context.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:property-placeholder location="db.properties"/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}"/>
         <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
+        <property name="username" value="root"/>
         <property name="password" value="${password}"/>
     </bean>
 
+    <!-- JPA 配置 -->
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -44,5 +48,10 @@
 
     <jpa:repositories base-package="orm" entity-manager-factory-ref="entityManagerFactory"/>
 
+    <!-- 事务管理 -->
+    <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
 
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="false" />
 </beans>

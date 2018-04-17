@@ -28,8 +28,5 @@ public class TestConfig {
 
     @Test
     public void testJPA01(){
-        UserRepository repository = context.getBean(UserRepository.class);
-        User user = repository.getById(1);
-        System.out.println(user);
     }
 }

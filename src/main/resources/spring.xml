@@ -15,7 +15,12 @@
       http://www.springframework.org/schema/tx
       http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+    <!-- 载入属性项 -->
     <context:property-placeholder location="db.properties"/>
+
+    <!-- 扫描包 -->
+    <context:component-scan base-package="SpringWeb.controller"/>
+
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}"/>

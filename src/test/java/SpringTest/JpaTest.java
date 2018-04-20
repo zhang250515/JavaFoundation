@@ -46,11 +46,14 @@ public class JpaTest extends BaseSpringTest{
 
     @Test
     @Rollback(false)
+    @Transactional
     public void testUserInsert(){
         User user = new User();
+        user.setId(1);
         user.setName("Jack");
         user.setPassword(123);
         User user1 = userRepository.save(user);
+        System.out.println(user1);
     }
 
     @Test
@@ -87,5 +90,10 @@ public class JpaTest extends BaseSpringTest{
         userRepository.findAll().forEach(System.out::println);
     }
 
+
+    @Test
+    public void testStringCon(){
+        String a = "aaa";
+    }
 
 }

@@ -1,7 +1,6 @@
 package Coding;
 
 import dataStructure.ListNode;
-import jdk.management.resource.internal.inst.InitInstrumentation;
 import org.junit.Test;
 
 import java.util.ArrayList;

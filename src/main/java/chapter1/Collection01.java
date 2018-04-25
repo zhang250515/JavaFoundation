@@ -63,6 +63,8 @@ public class Collection01 {
     @Test
     public void testHashMap(){
         Map<Integer, String> map = new HashMap<>();
-        map.put(1,"sdtqh");
+        map.put(1,"abc");
+        map.forEach((k,v)-> System.out.println(k+"---"+v));
     }
+
 }

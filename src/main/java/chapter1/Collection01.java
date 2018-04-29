@@ -31,7 +31,7 @@ public class Collection01 {
     @Test
     public void MapLearn(){
         Map<Integer,String> map = new HashMap<>();
-        String h = map.put(1,"h");
+        map.put(1,"h");
         map.put(2,"j");
         map.put(3,"k");
         //System.out.println(map);
@@ -59,4 +59,12 @@ public class Collection01 {
         int l = a.hashCode();
         System.out.println(l);
     }
+
+    @Test
+    public void testHashMap(){
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1,"abc");
+        map.forEach((k,v)-> System.out.println(k+"---"+v));
+    }
+
 }

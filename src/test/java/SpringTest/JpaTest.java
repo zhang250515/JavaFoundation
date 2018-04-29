@@ -1,6 +1,7 @@
 package SpringTest;
 
 import Utils.PermToDto;
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -11,6 +12,7 @@ import orm.*;
 
 import java.util.*;
 
+import javax.json.Json;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -47,10 +49,8 @@ public class JpaTest extends BaseSpringTest{
     @Test
     @Rollback(false)
     public void testUserInsert(){
-        User user = new User();
-        user.setName("Jack");
-        user.setPassword(123);
-        User user1 = userRepository.save(user);
+        User u = userRepository.testJpqlId(1);
+        System.out.println(u);
     }
 
     @Test
@@ -63,6 +63,8 @@ public class JpaTest extends BaseSpringTest{
         List<PermDto> dtos = getTree(dtos1,0);
         if (Objects.nonNull(dtos))
             dtos.forEach(System.out::println);
+        System.out.println("----------------");
+        System.out.println(JSON.toJSONString(dtos));
     }
 
     private List<PermDto> getTree(List<PermDto> dtos,int id){
@@ -87,5 +89,12 @@ public class JpaTest extends BaseSpringTest{
         userRepository.findAll().forEach(System.out::println);
     }
 
+
+    @Test
+    public void testStringCon(){
+        String a = "aaa";
+        HashMap<Integer,String> map = new HashMap<>();
+        map.put(1,"a");
+    }
 
 }

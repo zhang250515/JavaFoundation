@@ -2,9 +2,7 @@ package chapter2;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Created by ZhangQ on 2018/3/4.
@@ -79,5 +77,22 @@ public class basic02 {
     public void testHash(){
         HashMap<Integer,Integer> map = new HashMap<>();
 
+    }
+
+    @Test
+    public void testHW(){
+        int a = 34543;
+        System.out.println(isHW(a));
+    }
+
+    private boolean isHW(int a){
+        char value[] = Integer.valueOf(a).toString().toCharArray();
+        LinkedList<Character> se = new LinkedList<>();
+        for (char v : value)
+            se.add(v);
+        LinkedList<Character> nx = new LinkedList<>();
+        nx.addAll(se);
+        Collections.reverse(nx);
+        return Objects.equals(se,nx);
     }
 }

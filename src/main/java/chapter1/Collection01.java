@@ -67,4 +67,10 @@ public class Collection01 {
         map.forEach((k,v)-> System.out.println(k+"---"+v));
     }
 
+    @Test
+    public void testArrayLearn(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.forEach(System.out::println);
+    }
 }

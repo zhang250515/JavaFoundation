@@ -72,5 +72,8 @@ public class Collection01 {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.forEach(System.out::println);
+        System.out.println(2 << 2);
+        System.out.println(0x80000000);
+        System.out.println(0xFFFFFFFF);
     }
 }

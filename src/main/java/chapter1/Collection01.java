@@ -10,6 +10,9 @@ import java.util.*;
  */
 public class Collection01 {
 
+    private int a;
+    int b = 3;
+
     @Test
     public void listLearn(){
         List<Integer> list = new LinkedList<>();
@@ -75,5 +78,18 @@ public class Collection01 {
         System.out.println(2 << 2);
         System.out.println(0x80000000);
         System.out.println(0xFFFFFFFF);
+        System.out.println("-------");
+        Integer[] a = {2,3,4};
+        Integer[] b =  list.toArray(a);
+        list.forEach(System.out::println);
+        System.out.println(a==b);
+        list.set(0,null);
+        list.add(null);
+        System.out.println(list.size());
+
+    }
+
+    void  a(){
+        System.out.println(" am a");
     }
 }

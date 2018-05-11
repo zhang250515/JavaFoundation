@@ -39,4 +39,9 @@ public class DateResolve {
         LocalDateTime time = LocalDateTime.now();
         System.out.println(time.format(formatter));
     }
+
+    @Test
+    public void testAccess(){
+        System.out.println(new Collection01().b);
+    }
 }

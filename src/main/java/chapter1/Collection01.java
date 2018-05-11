@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class Collection01 {
 
-    private int a;
+    final String t = "abc";
     int b = 3;
 
     @Test
@@ -89,7 +89,15 @@ public class Collection01 {
 
     }
 
-    void  a(){
-        System.out.println(" am a");
+    @Test
+    public void testArrayList(){
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(5);
+        list.add(4);
+        //list.replaceAll(e -> e+1);
+        list.forEach(System.out::println);
+        list.sort(Integer::compareTo);
+        list.forEach(System.out::println);
     }
 }

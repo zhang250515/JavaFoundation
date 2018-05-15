@@ -10,16 +10,14 @@ import java.util.*;
  */
 public class Collection01 {
 
-    final String t = "abc";
     int b = 3;
 
     @Test
     public void listLearn(){
         List<Integer> list = new LinkedList<>();
-        Thread l = new Thread();
-        new Thread(() -> {
-            System.out.println("123");
-        }).start();
+        new Thread(() ->
+            System.out.println("123")
+        ).start();
         for (int i = 0; i < 5; i++) {
             list.add(i);
         }

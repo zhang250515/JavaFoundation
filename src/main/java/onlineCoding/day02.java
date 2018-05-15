@@ -4,7 +4,10 @@ import dataStructure.ListNode;
 import dataStructure.TreeNode;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
+
 
 /**
  * Created by ZhangQ on 2017/12/20.
@@ -81,5 +84,9 @@ public class day02 {
             System.out.println(q.val);
             q = q.next;
         }
+
+        int[] a = {};
+        Arrays.sort(a);
+        ArrayList list = new ArrayList(10);
     }
 }

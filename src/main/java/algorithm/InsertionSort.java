@@ -1,5 +1,7 @@
 package algorithm;
 
+import org.junit.Test;
+
 /**
  * Created by ZhangQ on 2018/3/20.
  */
@@ -76,6 +78,35 @@ public class InsertionSort {
                 a[a.length - i - 1] = a[max];
                 a[max] = temp;
             }
+        }
+    }
+
+    private void bubboSort(int[] a){
+        if (a.length<2)
+            return;
+        int modCount = 0;
+        int temp;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length-i-1; j++) {
+                if (a[j]>a[j+1]){
+                    temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                    modCount++;
+                }
+            }
+            if (modCount == 0)
+                return;
+            else modCount=0;
+        }
+    }
+
+    @Test
+    public void testSort(){
+        int[] a = {3,2,1};
+        bubboSort(a);
+        for (int i : a){
+            System.out.println(i);
         }
     }
 }

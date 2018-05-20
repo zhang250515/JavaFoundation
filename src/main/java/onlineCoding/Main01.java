@@ -1,4 +1,6 @@
 package onlineCoding;
+import org.junit.Test;
+
 import java.util.*;
 
 public class Main01{
@@ -31,7 +33,27 @@ public class Main01{
                 t += (";" + s);
             }
             System.out.println(t.substring(1));
+    }
 
+    @Test
+    public void testSumJQ(){
+         int a = 1234;
+         int[] b = new int[2];
+         getSum(a,b);
+        System.out.println(b[0]);
+        System.out.println(b[1]);
+    }
 
+    private void getSum(int a, int[] b){
+         int p,i=0;
+         while (a>0){
+             i++;
+             p = a%10;
+             a = (a-p)/10;
+             if (i%2 == 0)
+                 b[0]+=p;
+             else
+                 b[1]+=p;
+         }
     }
 }

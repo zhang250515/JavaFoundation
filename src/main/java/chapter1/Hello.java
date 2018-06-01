@@ -69,4 +69,10 @@ public class Hello {
         }
         return b;
     }
+
+    @Test
+    public void testStack(){
+        Integer a = 2;
+        System.out.println(a.intValue());
+    }
 }
